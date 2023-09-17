@@ -1,0 +1,51 @@
+.custom-table {
+    div {
+        div {
+            div:nth-child(3) {
+                .MuiInputBase-root {
+                    background-color: #d0e9fd;
+                }
+            }
+        }
+    }
+}
+table {
+    thead {
+       tr {
+           th {
+               span {
+                    color: #929292 !important;
+               }
+           }
+       }
+    }   
+    tbody {
+        tr {
+            td {
+                span {
+                     color: #929292 !important;
+                }
+            }
+        }
+    }   
+    tfoot {
+        tr {
+            td {
+                div {
+                    p {
+                        color: #929292;
+                    }
+                    & div {
+                        color: #929292;
+                    }
+                    & span {
+                        color: #929292;
+                    }
+                    & path {
+                        color: #929292;
+                    }
+                }
+            }
+        }
+    }
+}

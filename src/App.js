@@ -1,49 +1,60 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-import Team from "./scenes/team";
-import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
 import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
-import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import Calendar from "./scenes/calendar/calendar";
+import { AuthPage } from "./scenes/auth";
+import { getValue } from "./data/utils";
+import MeetingList from "./scenes/meeting/MeetingList";
+import AddMeeting from "./scenes/meeting/AddMeeting";
+import DeleteMeeting from "./scenes/meeting/DeleteMeeting";
+import MeetingType from "./scenes/meeting_type";
+import Prompt from "./scenes/prompt";
 
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
+  const [isLogined, setIsLogined] = useState(false);
+
+  useEffect(() => {
+    const loginFlag = getValue("login");
+    console.log("loginFlag", loginFlag);
+    if (loginFlag === "false") {
+      setIsLogined(false);
+    } else {
+      setIsLogined(true);
+    }
+  }, []);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app">
-          <Sidebar isSidebar={isSidebar} />
-          <main className="content">
-            <Topbar setIsSidebar={setIsSidebar} />
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/line" element={<Line />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/geography" element={<Geography />} />
-            </Routes>
-          </main>
-        </div>
-      </ThemeProvider>
+      {!isLogined ? (
+        <AuthPage />
+      ) : (
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div className="app">
+            <Sidebar isSidebar={isSidebar} />
+            <main className="content">
+              <Topbar setIsSidebar={setIsSidebar} />
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/meeting_list" element={<MeetingList />} />
+                <Route path="/meeting_add" element={<AddMeeting />} />
+                <Route path="/meeting_delete" element={<DeleteMeeting />} />
+                <Route path="/meeting_type" element={<MeetingType />} />
+                <Route path="/meeting_prompt" element={<Prompt />} />
+                <Route path="/profile" element={<Form />} />
+                <Route path="/faq" element={<FAQ />} />
+              </Routes>
+            </main>
+          </div>
+        </ThemeProvider>
+      )}
     </ColorModeContext.Provider>
   );
 }
