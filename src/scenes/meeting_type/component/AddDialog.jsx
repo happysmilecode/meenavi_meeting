@@ -19,9 +19,9 @@ const AddDialog = ({ openDialog, handleClose }) => {
 
   return (
     <Dialog open={openDialog} onClose={handleClose} fullWidth="lg">
-      <DialogTitle>Add Meeting Type</DialogTitle>
+      <DialogTitle>会議タイプの追加</DialogTitle>
       <DialogContent>
-        <DialogContentText>You can add meeting type</DialogContentText>
+        <DialogContentText>会議の種類を追加できます。</DialogContentText>
         <Box p={2}>
           {/* <SelectBox options={options} indicator="会議選択" /> */}
           <TextField
@@ -42,8 +42,9 @@ const AddDialog = ({ openDialog, handleClose }) => {
             color: colors.primary[400],
             backgroundColor: colors.blueAccent[400],
           }}
+          onClick={handleClose}
         >
-          種類削除
+          いいえ
         </Button>
         <Button
           variant="contained"
@@ -51,8 +52,9 @@ const AddDialog = ({ openDialog, handleClose }) => {
             color: colors.primary[400],
             backgroundColor: colors.blueAccent[400],
           }}
+          onClick={handleClose}
         >
-          種類削除
+          はい
         </Button>
       </DialogActions>
     </Dialog>

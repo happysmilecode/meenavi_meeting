@@ -21,7 +21,7 @@ const Dashboard = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="ダッシュボード" subtitle="ダッシュボードへようこそ" />
       </Box>
 
       {/* GRID & CHARTS */}
@@ -41,7 +41,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="17"
-            subtitle="Meeting Counts"
+            subtitle="会議の回数"
             progress="0.75"
             increase="+14%"
             icon={
@@ -60,7 +60,8 @@ const Dashboard = () => {
         >
           <StatBox
             title="4"
-            subtitle="Meeting Type"
+            subtitle="会議の種類
+            "
             progress="0.50"
             increase="+21%"
             icon={
@@ -79,7 +80,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="32"
-            subtitle="Prompt Type"
+            subtitle="プロンプトの種類"
             progress="0.30"
             increase="+5%"
             icon={
@@ -109,7 +110,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Meeting Graph
+                会議のグラフ
               </Typography>
             </Box>
             <Box>
@@ -139,7 +140,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Meetings
+            最近行われた会議
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (

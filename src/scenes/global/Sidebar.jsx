@@ -39,7 +39,7 @@ const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const [selected, setSelected] = useState("ダッシュボード");
 
   return (
     <Box
@@ -118,7 +118,7 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="Dashboard"
+              title="ダッシュボード"
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -132,39 +132,39 @@ const Sidebar = () => {
             >
               Meeting
             </Typography>
-            <SubMenu title="Manage" icon={<MeetingRoomIcon />}>
+            <SubMenu title="会議管理" icon={<MeetingRoomIcon />}>
               <Item
-                title="Meeting List"
+                title="会議リスト"
                 to="/meeting_list"
                 icon={<ListSharpIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
-                title="Add Meeting"
+                title="会議の追加"
                 to="/meeting_add"
                 icon={<AddIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
-                title="Delete Meeting"
+                title="会議の削除"
                 to="/meeting_delete"
                 icon={<DeleteIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
             </SubMenu>
-            <SubMenu title="Setting" icon={<SettingsIcon />}>
+            <SubMenu title="設定" icon={<SettingsIcon />}>
               <Item
-                title="Meeting Type"
+                title="会議の種類"
                 to="/meeting_type"
                 icon={<TypeSpecimenIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
               <Item
-                title="Prompt"
+                title="プロンプト"
                 to="/meeting_prompt"
                 icon={<ChangeHistoryIcon />}
                 selected={selected}
@@ -179,14 +179,14 @@ const Sidebar = () => {
               User
             </Typography>
             <Item
-              title="Profile"
+              title="プロフィール"
               to="/profile"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Help"
+              title="ヘルプ"
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}

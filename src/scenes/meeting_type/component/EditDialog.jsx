@@ -34,9 +34,9 @@ const EditDialog = ({ openDialog, handleClose }) => {
       fullWidth="xl"
       fullScreen={true}
     >
-      <DialogTitle>Edit Meeting Type</DialogTitle>
+      <DialogTitle>会議タイプの編集</DialogTitle>
       <DialogContent>
-        <DialogContentText>You can edit meeting type</DialogContentText>
+        <DialogContentText>会議の種類を編集できます。</DialogContentText>
         <Box p={2}>
           <Grid container spacing={2} className="custom-grid">
             <Grid item xs={4} md={4}>
@@ -62,7 +62,7 @@ const EditDialog = ({ openDialog, handleClose }) => {
                 placeholder="会議名を入力してください"
               />
               <TextareaAutosize
-                placeholder="this is textarea"
+                placeholder="テキストを入力してください"
                 minRows={20}
                 style={{
                   width: "100%",
@@ -82,8 +82,9 @@ const EditDialog = ({ openDialog, handleClose }) => {
             color: colors.primary[400],
             backgroundColor: colors.blueAccent[400],
           }}
+          onClick={handleClose}
         >
-          種類削除
+          いいえ
         </Button>
         <Button
           variant="contained"
@@ -93,7 +94,7 @@ const EditDialog = ({ openDialog, handleClose }) => {
           }}
           onClick={handleClose}
         >
-          種類削除
+          はい
         </Button>
       </DialogActions>
     </Dialog>

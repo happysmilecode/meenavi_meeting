@@ -30,7 +30,7 @@ const AddMeeting = () => {
 
   return (
     <Box m="20px">
-      <Header title="Meeting" subtitle="Add Meeting" />
+      <Header title="会議" subtitle="会議の追加" />
       <Box height="75vh">
         <Paper
           color={colors.primary[100]}

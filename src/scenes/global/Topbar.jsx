@@ -22,9 +22,13 @@ const Topbar = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogOut = () => {
+    setAnchorEl(null);
     setValue("login", false);
     setTimeout(() => (window.location.href = "/"), 1000);
-  };
+  }
 
   return (
     <Box display="flex" justifyContent="space-between" p={3}>
@@ -60,8 +64,8 @@ const Topbar = () => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>Log out</MenuItem>
+          <MenuItem onClick={handleClose}>プロフィール</MenuItem>
+          <MenuItem onClick={handleLogOut}>ログアウト</MenuItem>
         </Menu>
       </Box>
     </Box>

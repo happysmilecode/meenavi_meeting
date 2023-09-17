@@ -41,7 +41,8 @@ const MeetingType = () => {
 
   return (
     <Box m="20px">
-      <Header title="Meeting" subtitle="Meeting Type" />
+      <Header title="会議" subtitle="会議の種類
+" />
       <Box height="75vh">
         <Paper
           color={colors.primary[100]}

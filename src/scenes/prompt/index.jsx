@@ -19,7 +19,7 @@ const Prompt = ({ openDialog, handleClose }) => {
 
   return (
     <Box m="20px">
-      <Header title="Prompt" subtitle="Prompt Dashboard" />
+      <Header title="プロンプト" subtitle="プロンプトダッシュボード" />
       <Box height="75vh">
         <Box p={2} backgroundColor={colors.primary[400]} borderRadius="10px">
           <Grid container spacing={2} className="custom-grid">
@@ -28,7 +28,7 @@ const Prompt = ({ openDialog, handleClose }) => {
             </Grid>
             <Grid item xs={8} md={8}>
               <TextareaAutosize
-                placeholder="this is textarea"
+                placeholder="テキストを入力してください"
                 minRows={20}
                 style={{
                   width: "100%",

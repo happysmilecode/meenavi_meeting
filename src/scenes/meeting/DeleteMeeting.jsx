@@ -20,7 +20,7 @@ const DeleteMeeting = () => {
 
   return (
     <Box m="20px">
-      <Header title="Meeting" subtitle="Delete Meeting" />
+      <Header title="会議" subtitle="会議の削除" />
       <Box height="75vh">
         <Paper
           color={colors.primary[100]}

@@ -268,28 +268,28 @@ export const mockDataInvoices = [
 
 export const mockTransactions = [
   {
-    txId: "meet123",
-    user: "johndoe",
+    txId: "会議1",
+    user: "中本",
     date: "2021-09-01",
-    cost: "Complete",
+    cost: "完成",
   },
   {
-    txId: "meet124",
-    user: "jackdower",
+    txId: "会議11",
+    user: "中本",
     date: "2022-04-01",
-    cost: "Complete",
+    cost: "完成",
   },
   {
-    txId: "meet125",
-    user: "aberdohnny",
+    txId: "会議12",
+    user: "中本",
     date: "2021-09-01",
-    cost: "Complete",
+    cost: "完成",
   },
   {
-    txId: "meet126",
-    user: "goodmanave",
+    txId: "会議126",
+    user: "中本",
     date: "2022-11-05",
-    cost: "Complete",
+    cost: "完成",
   },
 ];
 

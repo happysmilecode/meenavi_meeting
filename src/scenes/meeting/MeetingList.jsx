@@ -7,7 +7,7 @@ import "./style/meeting_list.scss";
 const MeetingList = () => {
   return (
     <Box m="20px">
-      <Header title="Meeting" subtitle="Meeting Dashboard" />
+      <Header title="会議" subtitle="会議ダッシュボード" />
       <Box height="75vh">
         <div className="custom-table">
           <CustomTable></CustomTable>
