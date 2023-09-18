@@ -130,7 +130,7 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Meeting
+              会議
             </Typography>
             <SubMenu title="会議管理" icon={<MeetingRoomIcon />}>
               <Item
@@ -176,7 +176,7 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              User
+              ユーザー
             </Typography>
             <Item
               title="プロフィール"
