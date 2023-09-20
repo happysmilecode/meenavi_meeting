@@ -1,16 +1,26 @@
 import React from "react";
 import MaterialTable from "material-table";
-import { ThemeProvider, createTheme, useTheme } from "@mui/material";
+import { Button, ThemeProvider, createTheme, useTheme } from "@mui/material";
 import { tokens } from "../theme";
+import DeleteDialog from "../scenes/meeting/component/DeleteDialog";
 
 export function CustomTable() {
   const defaultMaterialTheme = createTheme();
+  const [showDialog, setShowDialog] = React.useState(false);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const handleDelete = () => {
+    setShowDialog(true);
+  };
+  const handleClose = () => {
+    setShowDialog(false);
+  };
+
   return (
     <ThemeProvider theme={defaultMaterialTheme}>
+      <DeleteDialog openDialog={showDialog} handleClose={handleClose} />
       <MaterialTable
         title="会議一覧表"
         style={{
@@ -23,6 +33,21 @@ export function CustomTable() {
           { title: "会議種別", field: "type" },
           { title: "進行役リンク", field: "server_link" },
           { title: "参加者リンク", field: "client_link" },
+          {
+            title: "会議の削除",
+            field: "delete",
+            render: () => (
+              <Button
+                style={{
+                  backgroundColor: colors.blueAccent[400],
+                  color: "white",
+                }}
+                onClick={handleDelete}
+              >
+                削除
+              </Button>
+            ),
+          },
         ]}
         data={[
           {
@@ -31,6 +56,7 @@ export function CustomTable() {
             type: "総会",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2021-05-01 14時",
@@ -38,6 +64,7 @@ export function CustomTable() {
             type: "報告会議",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2022-06-16 14時",
@@ -45,6 +72,7 @@ export function CustomTable() {
             type: "報告会議",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2023-01-01 14時",
@@ -52,6 +80,7 @@ export function CustomTable() {
             type: "総会",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2022-06-16 14時",
@@ -59,6 +88,7 @@ export function CustomTable() {
             type: "報告会議",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2023-01-01 14時",
@@ -66,6 +96,7 @@ export function CustomTable() {
             type: "総会",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
           {
             date: "2022-06-16 14時",
@@ -73,6 +104,7 @@ export function CustomTable() {
             type: "報告会議",
             server_link: "進行役URL",
             client_link: "参加者URL",
+            delete: "削除",
           },
         ]}
         options={{

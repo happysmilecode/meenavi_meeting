@@ -1,19 +1,11 @@
 import React from "react";
-import {
-  Box,
-  Paper,
-  Button,
-  TextField,
-  Grid,
-  Item,
-  useTheme,
-} from "@mui/material";
+import { Box, Paper, Button, TextField, Grid, useTheme } from "@mui/material";
 
 import Header from "../../components/Header";
-import { Text } from "../../components/Text";
 import SelectBox from "../../components/SelectBox";
 import CustomDatePicker from "../../components/CustomDatePicker";
 import { tokens } from "../../theme";
+import CustomTimePicker from "../../components/CustomTimePicker";
 
 const AddMeeting = () => {
   const options = [
@@ -52,10 +44,13 @@ const AddMeeting = () => {
           </Box>
           <Box p={2}>
             <Grid container spacing={2} className="custom-grid">
-              <Grid item xs={6} md={6}>
-                <CustomDatePicker></CustomDatePicker>
+              <Grid item xs={4} md={3}>
+                <CustomDatePicker label="時間選択"></CustomDatePicker>
               </Grid>
-              <Grid item xs={6} md={6}>
+              <Grid item xs={4} md={3}>
+                <CustomTimePicker label="時間選択"></CustomTimePicker>
+              </Grid>
+              <Grid item xs={4} md={6}>
                 <Box>YYYY-MM-DD HH形式で日時を入力してください</Box>
                 <Box>例：2023-07-25 13</Box>
               </Grid>
